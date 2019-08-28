@@ -1,0 +1,11 @@
+D:\0mirim\socketProgram\SocketMainMenu\bin\Debug\SocketMainMenu.exe.config
+D:\0mirim\socketProgram\SocketMainMenu\bin\Debug\SocketMainMenu.exe
+D:\0mirim\socketProgram\SocketMainMenu\bin\Debug\SocketMainMenu.pdb
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.csprojAssemblyReference.cache
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.Form1.resources
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.Properties.Resources.resources
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.csproj.GenerateResource.cache
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.csproj.CoreCompileInputs.cache
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.exe
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.pdb
+D:\0mirim\socketProgram\SocketMainMenu\obj\Debug\SocketMainMenu.Info.resources

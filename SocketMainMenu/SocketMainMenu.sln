@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketMainMenu", "SocketMainMenu.csproj", "{5FBA73FA-134A-4473-AE24-789991F74968}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FBA73FA-134A-4473-AE24-789991F74968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBA73FA-134A-4473-AE24-789991F74968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBA73FA-134A-4473-AE24-789991F74968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBA73FA-134A-4473-AE24-789991F74968}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {756EA18F-F253-4D91-A35A-26F2C11654D4}
+	EndGlobalSection
+EndGlobal

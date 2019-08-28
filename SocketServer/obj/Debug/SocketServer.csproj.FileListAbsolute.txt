@@ -1,0 +1,10 @@
+D:\0mirim\socketProgram\SocketServer\bin\Debug\SocketServer.exe.config
+D:\0mirim\socketProgram\SocketServer\bin\Debug\SocketServer.exe
+D:\0mirim\socketProgram\SocketServer\bin\Debug\SocketServer.pdb
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.Form1.resources
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.Properties.Resources.resources
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.csproj.GenerateResource.cache
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.csproj.CoreCompileInputs.cache
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.exe
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.pdb
+D:\0mirim\socketProgram\SocketServer\obj\Debug\SocketServer.csprojAssemblyReference.cache
