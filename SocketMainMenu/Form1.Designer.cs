@@ -36,6 +36,7 @@
             // 
             // clientBtn
             // 
+            this.clientBtn.BackColor = System.Drawing.Color.Gold;
             this.clientBtn.Font = new System.Drawing.Font("나눔스퀘어 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.clientBtn.Location = new System.Drawing.Point(12, 213);
             this.clientBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -43,11 +44,12 @@
             this.clientBtn.Size = new System.Drawing.Size(290, 159);
             this.clientBtn.TabIndex = 15;
             this.clientBtn.Text = "CLIENT";
-            this.clientBtn.UseVisualStyleBackColor = true;
+            this.clientBtn.UseVisualStyleBackColor = false;
             this.clientBtn.Click += new System.EventHandler(this.ClientBtn_Click);
             // 
             // serverBtn
             // 
+            this.serverBtn.BackColor = System.Drawing.Color.Gold;
             this.serverBtn.Font = new System.Drawing.Font("나눔스퀘어 Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.serverBtn.Location = new System.Drawing.Point(12, 47);
             this.serverBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -55,11 +57,12 @@
             this.serverBtn.Size = new System.Drawing.Size(290, 159);
             this.serverBtn.TabIndex = 14;
             this.serverBtn.Text = "SERVER";
-            this.serverBtn.UseVisualStyleBackColor = true;
+            this.serverBtn.UseVisualStyleBackColor = false;
             this.serverBtn.Click += new System.EventHandler(this.ServerBtn_Click);
             // 
             // infoBtn
             // 
+            this.infoBtn.BackColor = System.Drawing.Color.Gold;
             this.infoBtn.Font = new System.Drawing.Font("나눔스퀘어 Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.infoBtn.Location = new System.Drawing.Point(251, 14);
             this.infoBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -67,7 +70,7 @@
             this.infoBtn.Size = new System.Drawing.Size(24, 29);
             this.infoBtn.TabIndex = 13;
             this.infoBtn.Text = "?";
-            this.infoBtn.UseVisualStyleBackColor = true;
+            this.infoBtn.UseVisualStyleBackColor = false;
             this.infoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
             // 
             // label1
@@ -84,13 +87,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(313, 391);
             this.Controls.Add(this.clientBtn);
             this.Controls.Add(this.serverBtn);
             this.Controls.Add(this.infoBtn);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Socket Program";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -52,7 +52,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 15);
+            this.label3.Size = new System.Drawing.Size(51, 18);
             this.label3.TabIndex = 25;
             this.label3.Text = "PORT";
             // 
@@ -61,36 +61,38 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 15);
+            this.label4.Size = new System.Drawing.Size(22, 18);
             this.label4.TabIndex = 24;
             this.label4.Text = "IP";
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Gold;
             this.button3.Location = new System.Drawing.Point(6, 92);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(233, 69);
             this.button3.TabIndex = 21;
             this.button3.Text = "Connect";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(56, 58);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(183, 25);
+            this.textBox6.Size = new System.Drawing.Size(183, 27);
             this.textBox6.TabIndex = 19;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(56, 27);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(183, 25);
+            this.textBox5.Size = new System.Drawing.Size(183, 27);
             this.textBox5.TabIndex = 18;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox2.Location = new System.Drawing.Point(266, 12);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -99,6 +101,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.Location = new System.Drawing.Point(266, 283);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -107,12 +110,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(665, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 44);
             this.button1.TabIndex = 13;
             this.button1.Text = "SEND";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // backgroundWorker1
@@ -128,25 +133,26 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 28;
             this.label1.Text = "NAME";
             // 
             // nicButton
             // 
+            this.nicButton.BackColor = System.Drawing.Color.Gold;
             this.nicButton.Location = new System.Drawing.Point(6, 58);
             this.nicButton.Name = "nicButton";
             this.nicButton.Size = new System.Drawing.Size(233, 32);
             this.nicButton.TabIndex = 27;
             this.nicButton.Text = "CHANGE";
-            this.nicButton.UseVisualStyleBackColor = true;
+            this.nicButton.UseVisualStyleBackColor = false;
             this.nicButton.Click += new System.EventHandler(this.NicButton_Click);
             // 
             // nicTextBox
             // 
             this.nicTextBox.Location = new System.Drawing.Point(56, 24);
             this.nicTextBox.Name = "nicTextBox";
-            this.nicTextBox.Size = new System.Drawing.Size(183, 25);
+            this.nicTextBox.Size = new System.Drawing.Size(183, 27);
             this.nicTextBox.TabIndex = 26;
             // 
             // groupBox1
@@ -156,6 +162,7 @@
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(15, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 167);
@@ -168,6 +175,7 @@
             this.groupBox2.Controls.Add(this.nicButton);
             this.groupBox2.Controls.Add(this.nicTextBox);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(15, 214);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(245, 100);
@@ -179,12 +187,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(800, 339);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "CLIENT";
             this.groupBox1.ResumeLayout(false);

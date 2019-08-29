@@ -17,86 +17,90 @@ namespace SocketServer
     public partial class Form1 : Form
     {
         private TcpClient client;
-        public StreamReader STR;
-        public StreamWriter STW;
-        public string receive;
-        public string text_to_send;
-        public string myNic = "";
-        public string myNewNic = "";
-        public int count = 0;
+        public StreamReader STR;    //상대방의 메시지를 불러들이는 데에 사용
+        public StreamWriter STW;    //나의 메시지를 저장하는 데에 사용
+        public string receive;      //BackgroundWorker1_DoWork를 통해 받아온 메시지를 저장, 출력
+        public string text_to_send; //BackgroundWorker2_DoWork를 통해 보낼 메시지를 저장, 출력
+        public string myNic = "";     //나의 닉네임을 저장하는 변수
+        public string myNewNic = "";//내가 변경한 닉네임을 저장하는 변수
 
-        private bool nicButtonClicked = false;
+        private bool nicButtonClicked = false;  //닉네임을 변경하는 버튼을 클릭했는지 확인하는 bool타입 변수
 
         public Form1()
         {
             InitializeComponent();
 
-            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());//get my own ip
+            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());  //내 PC의 IP 주소를 받아옴
             foreach (IPAddress address in localIP)
             {
                 if (address.AddressFamily == AddressFamily.InterNetwork)
                 {
                     textBox3.Text = address.ToString();
-                    myNic = address.ToString()+" SERVER";
-                    myNewNic = address.ToString()+" SERVER";
+                    myNic = address.ToString()+" SERVER";       //나의 닉네임 변수에 IP주소+SERVER 를 저장함
+                    myNewNic = address.ToString()+" SERVER";    //내가 변경한 닉네임을 저장하는 변수에 IP주소+SERVER 를 저장함
                 }
             }
 
         }
 
-
+        //닉네임 변경 버튼
         private void NicButton_Click(object sender, EventArgs e)
         {
-            nicButtonClicked = true;
-            myNewNic = nicTextBox.Text.ToString();
+            nicButtonClicked = true;    //닉네임을 변경하는 버튼이 클릭되었을 때 bool 타입 nicButtonClicked 변수에 true 값을 저장
+            myNewNic = nicTextBox.Text.ToString();  //나의 새로운 닉네임 변수에 바꿀 닉네임을 입력한 칸의 내용을 저장
             string changeNic = myNic + "님이 " + myNewNic + "으로 닉네임을 변경하였습니다" + "\r\n";
 
             this.textBox2.Invoke(new MethodInvoker(delegate ()
             {
-                textBox2.AppendText(changeNic);
+                textBox2.AppendText(changeNic); //닉네임을 변경하였다는 문구 띄워줌
             }));
             STW.WriteLine(changeNic);
         }
 
+        //서버 오픈하는 버튼
         private void Button2_Click(object sender, EventArgs e)
         {
-            button2.Enabled = false;
+            button2.Enabled = false;    //오픈 버튼을 클릭하고 나면 다시 클릭할 수 없게 설정을 바꿔줌
 
             textBox2.AppendText("서버가 오픈되었습니다" + "\r\n");
             textBox2.AppendText(myNic + "님이 입장하셨습니다" + "\r\n");
 
             TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(textBox4.Text));
             listener.Start();
+            //IP주소와 Port번호를 TcpListener에 전달한 후 Start
+
             client = listener.AcceptTcpClient();
             STR = new StreamReader(client.GetStream());
             STW = new StreamWriter(client.GetStream());
             STW.AutoFlush = true;
 
-            backgroundWorker1.RunWorkerAsync();//start receiving data in background
-            backgroundWorker2.WorkerSupportsCancellation = true;//ability to cancel this thread
+            backgroundWorker1.RunWorkerAsync();     //BackgroundWorker1을 사용해 메시지를 받아오기 시작
+            backgroundWorker2.WorkerSupportsCancellation = true;    //이 스레드를 취소할 수 있도록 함
         }
 
+        //메시지 전송 버튼
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (textBox1.Text != "")    //만약 메시지를 작성하는 칸이 비어있지 않다면
             {
-                text_to_send = textBox1.Text;
+                text_to_send = textBox1.Text;   //text_to_send  변수에 메시지를 작성하는 칸에 담긴 내용을 저장
                 backgroundWorker2.RunWorkerAsync();
             }
             textBox1.Text = "";
         }
 
+        //BackgroundWorker1 : 메시지를 받아옴
         private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (client.Connected)
+            while (client.Connected)    //클라이언트가 연결되었을 시
             {
                 try
                 {
-                    receive = STR.ReadLine();
+                    receive = STR.ReadLine();   //STR에 담겨있는 내용을 한 줄씩 읽어 receive 변수에 저장
                     this.textBox2.Invoke(new MethodInvoker(delegate () {
-                        textBox2.AppendText(receive+"\r\n");
+                        textBox2.AppendText(receive + "\r\n");  //채팅창에 receive에 담겨있는 내용을 출력
                     }));
-                    receive = "";
+                    receive = "";   //receive 변수를 비워줌
                 }
                 catch (Exception x)
                 {
@@ -105,16 +109,17 @@ namespace SocketServer
             }
         }
 
+        //BackgroundWorker2 : 내가 작성한 메시지를 전달할 때에 사용
         private void BackgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (client.Connected)
+            if (client.Connected)   //만약 클라이언트가 연결되었을 시
             {
                 this.textBox2.Invoke(new MethodInvoker(delegate ()
                 {
-                    text_to_send = myNewNic + " : " + text_to_send + "\r\n";
-                    textBox2.AppendText(text_to_send);
+                    text_to_send = myNewNic + " : " + text_to_send + "\r\n";    //text_to_send 변수에 나의 닉네임 + 보낼 메시지를 저장
+                    textBox2.AppendText(text_to_send);  //채팅창에 text_to_send 변수에 담겨있는 내용을 출력
                 }));
-                STW.WriteLine(text_to_send);
+                STW.WriteLine(text_to_send);    //STW에 text_to_send 변수에 담겨있는 내용을 전달
             }
             else
             {
